@@ -1,19 +1,46 @@
 {
-  "name": "stimulus-starter",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "name": "stimulus-repo",
   "private": true,
+  "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
-    "start": "node server.js"
+    "start": "lerna run --scope @stimulus/examples --stream start",
+    "clean": "rimraf dist packages/*/dist packages/*/**/dist",
+    "lint": "tslint --project tsconfig.json",
+
+    "pretest": "yarn clean && yarn lint",
+    "test": "karma start",
+
+    "precompile": "yarn clean",
+    "compile": "tsc",
+
+    "predist": "yarn compile",
+    "dist": "node scripts/dist-to-packages.js",
+
+    "prebuild": "yarn lint && yarn dist",
+    "build": "lerna run build",
+
+    "prerelease": "yarn build",
+    "release": "lerna publish"
   },
-  "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "express": "^4.16.2",
-    "stimulus": "^0.6.0",
-    "webpack": "^3.8.1",
-    "webpack-dev-middleware": "^2.0.2"
+  "workspaces": [
+    "packages/*",
+    "packages/@stimulus/*"
+  ],
+  "devDependencies": {
+    "@types/qunit": "^2.0.31",
+    "fs-extra": "^5.0.0",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-qunit": "^1.2.1",
+    "karma-sauce-launcher": "^1.2.0",
+    "karma-webpack": "^2.0.9",
+    "lerna": "^2.5.1",
+    "qunitjs": "^2.4.0",
+    "rimraf": "^2.6.2",
+    "ts-loader": "^3.2.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0"
   }
 }
