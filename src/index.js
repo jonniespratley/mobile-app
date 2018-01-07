@@ -1,7 +1,4 @@
-import { Application } from "stimulus"
-import { autoload } from "stimulus/webpack-helpers"
+import App from './components/app';
+import { render } from 'react-dom';
 
-const application = Application.start()
-const context = require.context("./controllers", true, /\.js$/)
-
-autoload(context, application)
+render(<App />, document.querySelector('#mountNode'));
