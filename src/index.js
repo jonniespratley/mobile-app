@@ -1,4 +1,6 @@
+import React from 'react'
+import ReactDOM from 'react-dom';
 import App from './components/app';
-import { render } from 'react-dom';
 
-render(<App />, document.querySelector('#mountNode'));
+
+ReactDOM.render(<App />, document.querySelector('#mountNode'));

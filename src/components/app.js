@@ -1,7 +1,7 @@
-import { Component } from 'react'
+import React from 'react'
 import MySimpleReactComponent from './my-simple-react-component'
 
-export default class extends Component {
+export default class extends React.Component {
  render(){
 		return (
 			<div className='app'>	

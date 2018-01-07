@@ -1,6 +1,6 @@
-import {Component} from 'react';
+import React from 'react';
 
-export default class MySimpleReactComponent extends Component {
+export default class MySimpleReactComponent extends React.Component {
   constructor(props){
     super(props);
     this.displayName = 'MySimpleReactComponent';
