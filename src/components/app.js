@@ -1,19 +1,91 @@
 import React from 'react'
 import MySimpleReactComponent from './my-simple-react-component'
+import {
+  HashRouter as Router,
+  Route,
+  Link,
+	Switch
+} from 'react-router-dom'
 
-export default class extends React.Component {
- render(){
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+		<p>This is the Home page.</p>
+      <MySimpleReactComponent 
+        name='Jonnie'
+        items={['Item 1', 'Item 2', 'Item 3']}/>
+  </div>
+);
+
+const About = () => (
+  <div>
+    <h2>About</h2>
+		<p>This is the about page.</p>
+  </div>
+);
+
+const Topic = ({ match }) => (
+  <div>
+    <h3>{match.params.topicId}</h3>
+  </div>
+);
+
+const Topics = ({ match }) => (
+  <div>
+    <h2>Topics</h2>
+		<p>The following is an example of sub-routes for a component.</p>
+    <ul>
+      <li>
+        <Link to={`${match.url}/rendering`}>
+          Rendering with React
+        </Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/components`}>
+          Components
+        </Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/props-v-state`}>
+          Props v. State
+        </Link>
+      </li>
+    </ul>
+
+    <Route path={`${match.url}/:topicId`} component={Topic}/>
+    <Route exact path={match.url} render={() => (
+      <h3>Please select a topic.</h3>
+    )}/>
+  </div>
+);
+
+const NoMatch = ({ location }) => (
+  <div>
+    <h3>No match for <code>{location.pathname}</code></h3>
+  </div>
+);
+
+export default class App extends React.Component {
+	render(){
 		return (
-			<div className='app'>	
-				<div>
-					<h1>React Component Example</h1>
-					<p>The following are examples of this component.</p>
-				</div>
-				
-				<MySimpleReactComponent 
-					name='Jonnie'
-					items={['Item 1', 'Item 2', 'Item 3']}/>
-			</div>
+			<Router>
+			 <div>
+				 <ul>
+					 <li><Link to="/">Home</Link></li>
+					 <li><Link to="/about">About</Link></li>
+					 <li><Link to="/topics">Topics</Link></li>
+					 <li><Link to="/404">Example 404</Link></li>
+				 </ul>
+
+				 <hr/>
+				 <Switch>
+					 <Route exact path="/" component={Home}/>
+						<Route path="/about" component={About}/>
+						<Route path="/topics" component={Topics}/>
+						<Route component={NoMatch}/>
+				 </Switch>
+			 </div>
+		 </Router>
 		)
 	}
 }
