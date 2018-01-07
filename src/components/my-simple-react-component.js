@@ -28,7 +28,7 @@ export default class MySimpleReactComponent extends React.Component {
         {children}
         <ul>
           {items && items.map((item, index) => (
-             <li onClick={this.handleClick}>{index} - {item}</li>
+             <li key={index} onClick={this.handleClick}>{item}</li>
           ))}
         </ul>
         <style>{`
