@@ -7,10 +7,40 @@ import {
 	Switch
 } from 'react-router-dom'
 
+
+
+
+
+import styled from 'styled-components';
+
+
+// TODO - Styled Compnents
+const Button = styled.button`
+  /* Adapt the colours based on primary prop */
+  background: ${props => props.primary ? 'palevioletred' : 'white'};
+  color: ${props => props.primary ? 'white' : 'palevioletred'};
+
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+
+
+
+
+
+
+
 const Home = () => (
   <div>
     <h2>Home</h2>
 		<p>This is the Home page.</p>
+  
+    <Button>Button</Button>
+  <Button>Normal</Button>
+    <Button primary>Primary</Button>
       <MySimpleReactComponent 
         name='Jonnie'
         items={['Item 1', 'Item 2', 'Item 3']}/>
