@@ -39,11 +39,11 @@ const Home = () => (
 		<p>This is the Home page.</p>
   
     <Button>Button</Button>
-  <Button>Normal</Button>
+    <Button>Normal</Button>
     <Button primary>Primary</Button>
-      <MySimpleReactComponent 
-        name='Jonnie'
-        items={['Item 1', 'Item 2', 'Item 3']}/>
+    <MySimpleReactComponent 
+      name='Jonnie'
+      items={['Item 1', 'Item 2', 'Item 3']}/>
   </div>
 );
 
@@ -100,12 +100,21 @@ export default class App extends React.Component {
 		return (
 			<Router>
 			 <div>
-				 <ul>
-					 <li><Link to="/">Home</Link></li>
-					 <li><Link to="/about">About</Link></li>
-					 <li><Link to="/topics">Topics</Link></li>
-					 <li><Link to="/404">Example 404</Link></li>
-				 </ul>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand" href="#">Navbar</a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+               <li><Link className="nav-link" to="/">Home</Link></li>
+               <li><Link to="/about">About</Link></li>
+               <li><Link to="/topics">Topics</Link></li>
+               <li><Link to="/404">Example 404</Link></li>
+             </ul>
+            </div>
+          </nav>
+				 
 
 				 <hr/>
 				 <Switch>
