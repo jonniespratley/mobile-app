@@ -23,3 +23,27 @@ const $base-spacing-unit--small : calculateRem(round($-base-line-height / 2));
 const $base-spacing-unit--large : calculateRem($-base-line-height);
 const $base-spacing-unit--huge  : calculateRem(round($inuit-base-line-height * 1.5));
 */
+
+
+
+
+
+// TODO - Styled Compnents
+const Button = styled.button`
+  /* Adapt the colours based on primary prop */
+  background: ${props => props.primary ? 'palevioletred' : 'white'};
+  color: ${props => props.primary ? 'white' : 'palevioletred'};
+
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+/*
+
+ <Button>Button</Button>
+    <Button>Normal</Button>
+    <Button primary>Primary</Button>
+    */
+export default Button;

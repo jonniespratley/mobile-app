@@ -5,20 +5,22 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+     "start": "node ./dist/server",
+    "dev": "node server.js"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-plugin-styled-components": "^1.4.0",
     "express": "^4.16.2",
-    "webpack": "^3.10.0",
-    "webpack-dev-middleware": "^2.0.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "styled-components": "^2.4.0",
-    "babel-plugin-styled-components": "^1.4.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^2.0.3",
+    "webpack-node-externals": "^1.7.2"
   }
 }
