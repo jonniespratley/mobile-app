@@ -1,5 +1,5 @@
 import React from 'react'
-import MySimpleReactComponent from './MySimpleReactComponent'
+import MySimpleReactComponent from '../MySimpleReactComponent'
 import {
   HashRouter as Router,
   Route,

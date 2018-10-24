@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-     "start": "node ./dist/server",
+     "start": "node server",
     "dev": "node server.js"
   },
   "dependencies": {
