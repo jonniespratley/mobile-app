@@ -1,5 +1,5 @@
 import React from 'react'
-import MySimpleReactComponent from '../MySimpleReactComponent'
+import { Page, Toolbar, Button, ToolbarButton, BackButton, Icon, List, ListItem} from 'react-onsenui';
 import {
   HashRouter as Router,
   Route,
@@ -7,25 +7,43 @@ import {
 	Switch
 } from 'react-router-dom'
 
+import MySimpleReactComponent from '../MySimpleReactComponent'
 
 
-
-
-
-
-
+/**
+Home Page
+*/
 const Home = () => (
-  <div>
-    <h2>Home</h2>
-		<p>This is the Home page.</p>
+  <Page  contentStyle={{padding: 20}} renderToolbar={() =>
+    <Toolbar>
+      <div className="center">
+        Title
+      </div>
+      <div className="right">
+        <ToolbarButton>
+          <Icon icon="md-menu" />
+        </ToolbarButton>
+      </div>
+    </Toolbar> }
+  >
+    <div>
+      <List
+          dataSource={['Row 1', 'Row 2', 'Row 3']}
+          renderRow={(row, idx) => (
+            <ListItem key={row}>
+              {row}
+              <Button modifier="quiet" onClick={(e) => {console.log('remove', idx)}}>Remove</Button>
+            </ListItem>
+        )}
+        />
+    </div>
+  </Page>
   
-   
-    <MySimpleReactComponent 
-      name='Jonnie'
-      items={['Item 1', 'Item 2', 'Item 3']}/>
-  </div>
 );
 
+/**
+About Page
+*/
 const About = () => (
   <div>
     <h2>About</h2>
@@ -33,12 +51,18 @@ const About = () => (
   </div>
 );
 
+/**
+Topic Page
+*/
 const Topic = ({ match }) => (
   <div>
     <h3>{match.params.topicId}</h3>
   </div>
 );
 
+/**
+Topics Page
+*/
 const Topics = ({ match }) => (
   <div>
     <h2>Topics</h2>
@@ -68,6 +92,9 @@ const Topics = ({ match }) => (
   </div>
 );
 
+/**
+404 Page
+*/
 const NoMatch = ({ location }) => (
   <div>
     <h3>No match for <code>{location.pathname}</code></h3>
@@ -79,6 +106,9 @@ export default class App extends React.Component {
 		return (
 			<Router>
 			 <div>
+
+         <Toolbar />
+
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="#">Navbar</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
