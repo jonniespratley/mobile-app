@@ -13,7 +13,7 @@ import MySimpleReactComponent from '../MySimpleReactComponent'
 /**
 Home Page
 */
-const Home = () => (
+const Home = ({tracks = []}) => (
   <Page  contentStyle={{padding: 20}} renderToolbar={() =>
     <Toolbar>
       <div className="center">
@@ -27,15 +27,25 @@ const Home = () => (
     </Toolbar> }
   >
     <div>
-      <List
-          dataSource={['Row 1', 'Row 2', 'Row 3']}
+      {tracks && <List modifier="noborder"
+          dataSource={tracks}
           renderRow={(row, idx) => (
-            <ListItem key={row}>
-              {row}
-              <Button modifier="quiet" onClick={(e) => {console.log('remove', idx)}}>Remove</Button>
+            <ListItem key={idx} tappable>
+                <div className="left">
+                  <img src={`${row.image[1]['#text']}`} alt={row.name}/>
+                </div>
+                <div className="center">
+                  <p>{row.name}</p>
+                <p>{row.artist.name}</p>
+                </div>
+                <div className="right">
+                  <a href={row.url} target="_blank">View</a>
+                  <Button modifier="quiet" onClick={(e) => {console.log('remove', idx)}}>Remove</Button>
+              </div>
+              <div className="expandable-content">Expandable content</div>
             </ListItem>
         )}
-        />
+        />}
     </div>
   </Page>
   
@@ -102,7 +112,22 @@ const NoMatch = ({ location }) => (
 );
 
 export default class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      title: 'Top Tracks',
+      tracks: null
+    };
+
+  }
+  componentWillMount(){
+    fetch('/api/lastfm/chart.gettoptracks?limit=2').then(resp => resp.json()).then(json => {
+      console.log(json.tracks.track);
+      this.setState({tracks: json.tracks.track});
+    });
+  }
 	render(){
+    const {tracks} = this.state;
 		return (
 			<Router>
 			 <div>
@@ -123,11 +148,11 @@ export default class App extends React.Component {
              </ul>
             </div>
           </nav>
-				 
-
 				 <hr/>
 				 <Switch>
-					 <Route exact path="/" component={Home}/>
+					 <Route exact path="/" 
+           render={(props) => <Home {...props} tracks={tracks} />}
+           />
 						<Route path="/about" component={About}/>
 						<Route path="/topics" component={Topics}/>
 						<Route component={NoMatch}/>
