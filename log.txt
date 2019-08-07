@@ -1,0 +1,83 @@
+== Info: Rebuilt URL to: http://macbook.local:8080/
+== Info:   Trying 127.0.0.1...
+== Info: TCP_NODELAY set
+== Info: Connected to macbook.local (127.0.0.1) port 8080 (#0)
+=> Send header, 82 bytes (0x52)
+0000: 47 45 54 20 2f 20 48 54 54 50 2f 31 2e 31 0d 0a GET / HTTP/1.1..
+0010: 48 6f 73 74 3a 20 6d 61 63 62 6f 6f 6b 2e 6c 6f Host: macbook.lo
+0020: 63 61 6c 3a 38 30 38 30 0d 0a 55 73 65 72 2d 41 cal:8080..User-A
+0030: 67 65 6e 74 3a 20 63 75 72 6c 2f 37 2e 35 34 2e gent: curl/7.54.
+0040: 30 0d 0a 41 63 63 65 70 74 3a 20 2a 2f 2a 0d 0a 0..Accept: */*..
+0050: 0d 0a                                           ..
+<= Recv header, 17 bytes (0x11)
+0000: 48 54 54 50 2f 31 2e 31 20 32 30 30 20 4f 4b 0d HTTP/1.1 200 OK.
+0010: 0a                                              .
+<= Recv header, 22 bytes (0x16)
+0000: 53 65 72 76 65 72 3a 20 6e 67 69 6e 78 2f 31 2e Server: nginx/1.
+0010: 31 37 2e 32 0d 0a                               17.2..
+<= Recv header, 37 bytes (0x25)
+0000: 44 61 74 65 3a 20 54 75 65 2c 20 30 36 20 41 75 Date: Tue, 06 Au
+0010: 67 20 32 30 31 39 20 31 39 3a 32 38 3a 32 37 20 g 2019 19:28:27 
+0020: 47 4d 54 0d 0a                                  GMT..
+<= Recv header, 25 bytes (0x19)
+0000: 43 6f 6e 74 65 6e 74 2d 54 79 70 65 3a 20 74 65 Content-Type: te
+0010: 78 74 2f 68 74 6d 6c 0d 0a                      xt/html..
+<= Recv header, 21 bytes (0x15)
+0000: 43 6f 6e 74 65 6e 74 2d 4c 65 6e 67 74 68 3a 20 Content-Length: 
+0010: 36 31 32 0d 0a                                  612..
+<= Recv header, 46 bytes (0x2e)
+0000: 4c 61 73 74 2d 4d 6f 64 69 66 69 65 64 3a 20 4d Last-Modified: M
+0010: 6f 6e 2c 20 30 35 20 41 75 67 20 32 30 31 39 20 on, 05 Aug 2019 
+0020: 32 30 3a 31 32 3a 32 39 20 47 4d 54 0d 0a       20:12:29 GMT..
+<= Recv header, 24 bytes (0x18)
+0000: 43 6f 6e 6e 65 63 74 69 6f 6e 3a 20 6b 65 65 70 Connection: keep
+0010: 2d 61 6c 69 76 65 0d 0a                         -alive..
+<= Recv header, 22 bytes (0x16)
+0000: 45 54 61 67 3a 20 22 35 64 34 38 38 64 61 64 2d ETag: "5d488dad-
+0010: 32 36 34 22 0d 0a                               264"..
+<= Recv header, 22 bytes (0x16)
+0000: 41 63 63 65 70 74 2d 52 61 6e 67 65 73 3a 20 62 Accept-Ranges: b
+0010: 79 74 65 73 0d 0a                               ytes..
+<= Recv header, 2 bytes (0x2)
+0000: 0d 0a                                           ..
+<= Recv data, 612 bytes (0x264)
+0000: 3c 21 44 4f 43 54 59 50 45 20 68 74 6d 6c 3e 0a <!DOCTYPE html>.
+0010: 3c 68 74 6d 6c 3e 0a 3c 68 65 61 64 3e 0a 3c 74 <html>.<head>.<t
+0020: 69 74 6c 65 3e 57 65 6c 63 6f 6d 65 20 74 6f 20 itle>Welcome to 
+0030: 6e 67 69 6e 78 21 3c 2f 74 69 74 6c 65 3e 0a 3c nginx!</title>.<
+0040: 73 74 79 6c 65 3e 0a 20 20 20 20 62 6f 64 79 20 style>.    body 
+0050: 7b 0a 20 20 20 20 20 20 20 20 77 69 64 74 68 3a {.        width:
+0060: 20 33 35 65 6d 3b 0a 20 20 20 20 20 20 20 20 6d  35em;.        m
+0070: 61 72 67 69 6e 3a 20 30 20 61 75 74 6f 3b 0a 20 argin: 0 auto;. 
+0080: 20 20 20 20 20 20 20 66 6f 6e 74 2d 66 61 6d 69        font-fami
+0090: 6c 79 3a 20 54 61 68 6f 6d 61 2c 20 56 65 72 64 ly: Tahoma, Verd
+00a0: 61 6e 61 2c 20 41 72 69 61 6c 2c 20 73 61 6e 73 ana, Arial, sans
+00b0: 2d 73 65 72 69 66 3b 0a 20 20 20 20 7d 0a 3c 2f -serif;.    }.</
+00c0: 73 74 79 6c 65 3e 0a 3c 2f 68 65 61 64 3e 0a 3c style>.</head>.<
+00d0: 62 6f 64 79 3e 0a 3c 68 31 3e 57 65 6c 63 6f 6d body>.<h1>Welcom
+00e0: 65 20 74 6f 20 6e 67 69 6e 78 21 3c 2f 68 31 3e e to nginx!</h1>
+00f0: 0a 3c 70 3e 49 66 20 79 6f 75 20 73 65 65 20 74 .<p>If you see t
+0100: 68 69 73 20 70 61 67 65 2c 20 74 68 65 20 6e 67 his page, the ng
+0110: 69 6e 78 20 77 65 62 20 73 65 72 76 65 72 20 69 inx web server i
+0120: 73 20 73 75 63 63 65 73 73 66 75 6c 6c 79 20 69 s successfully i
+0130: 6e 73 74 61 6c 6c 65 64 20 61 6e 64 0a 77 6f 72 nstalled and.wor
+0140: 6b 69 6e 67 2e 20 46 75 72 74 68 65 72 20 63 6f king. Further co
+0150: 6e 66 69 67 75 72 61 74 69 6f 6e 20 69 73 20 72 nfiguration is r
+0160: 65 71 75 69 72 65 64 2e 3c 2f 70 3e 0a 0a 3c 70 equired.</p>..<p
+0170: 3e 46 6f 72 20 6f 6e 6c 69 6e 65 20 64 6f 63 75 >For online docu
+0180: 6d 65 6e 74 61 74 69 6f 6e 20 61 6e 64 20 73 75 mentation and su
+0190: 70 70 6f 72 74 20 70 6c 65 61 73 65 20 72 65 66 pport please ref
+01a0: 65 72 20 74 6f 0a 3c 61 20 68 72 65 66 3d 22 68 er to.<a href="h
+01b0: 74 74 70 3a 2f 2f 6e 67 69 6e 78 2e 6f 72 67 2f ttp://nginx.org/
+01c0: 22 3e 6e 67 69 6e 78 2e 6f 72 67 3c 2f 61 3e 2e ">nginx.org</a>.
+01d0: 3c 62 72 2f 3e 0a 43 6f 6d 6d 65 72 63 69 61 6c <br/>.Commercial
+01e0: 20 73 75 70 70 6f 72 74 20 69 73 20 61 76 61 69  support is avai
+01f0: 6c 61 62 6c 65 20 61 74 0a 3c 61 20 68 72 65 66 lable at.<a href
+0200: 3d 22 68 74 74 70 3a 2f 2f 6e 67 69 6e 78 2e 63 ="http://nginx.c
+0210: 6f 6d 2f 22 3e 6e 67 69 6e 78 2e 63 6f 6d 3c 2f om/">nginx.com</
+0220: 61 3e 2e 3c 2f 70 3e 0a 0a 3c 70 3e 3c 65 6d 3e a>.</p>..<p><em>
+0230: 54 68 61 6e 6b 20 79 6f 75 20 66 6f 72 20 75 73 Thank you for us
+0240: 69 6e 67 20 6e 67 69 6e 78 2e 3c 2f 65 6d 3e 3c ing nginx.</em><
+0250: 2f 70 3e 0a 3c 2f 62 6f 64 79 3e 0a 3c 2f 68 74 /p>.</body>.</ht
+0260: 6d 6c 3e 0a                                     ml>.
+== Info: Connection #0 to host macbook.local left intact
